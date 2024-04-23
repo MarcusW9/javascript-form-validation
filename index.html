@@ -12,17 +12,17 @@
       <ul>
         <li>
           <label for="uname">User name:</label>
-          <input name="uname" id="uname" required type="text" minlength="5" maxlength="20">
+          <input name="uname" id="uname" required type="text" minlength="5" maxlength="20" pattern="[a-z]\.[a-z\d]{3,}">
           <span class="error" aria-live="polite"></span>
         </li>
         <li>
           <label for="email">Email address:</label>
-          <input name="email" id="email" required type="email" minlength="8">
+          <input name="email" id="email" required type="email" minlength="8" pattern="[a-zA-Z\d]+@bigcorp\.eu$">
           <span class="error" aria-live="polite"></span>
         </li>
         <li>
           <label for="phone">Phone number:</label>
-          <input name="phone" id="phone" required type="number" maxlength="15">
+          <input name="phone" id="phone" required type="text" pattern="^\d{10}|\d{3}[ \-\.]\d{3}[ \-\.]\d{4}">
           <span class="error" aria-live="polite"></span>
         </li>
         <li>

@@ -24,6 +24,8 @@ function showEmailError() {
         emailError.textContent = "Please enter a valid email address format."
     } else if (email.validity.tooShort) {
         emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+    } else if (email.validity.patternMismatch) {
+        emailError.textContent = `Email should consist of one or more letters (lower or upper case) or numbers, followed by "@bigcorp.eu".`
     }
     emailError.className = "error active";
 }
@@ -40,7 +42,9 @@ uname.addEventListener("input", (e) => {
 function showUnameError() {
     if (uname.validity.valueMissing) {
         unameError.textContent = "You need to enter a username"
-    } 
+    } else if (uname.validity.patternMismatch) {
+        unameError.textContent = "Your username should be a single letter, followed by a dot and three or more characters"
+    }
     unameError.className = "error active"
 }
 
@@ -56,11 +60,10 @@ phone.addEventListener("input", (e) => {
 function showPhoneError() {
     if (phone.validity.valueMissing) {
         phoneError.textContent = "Please enter a phone number"
-    } else if (phone.validity.typeMismatch) {
-        phoneError.textContent = "Please enter numbers only"
-    } else if (phone.validity.tooLong) {
-        phoneError.textContent = `Phone number should be at least ${phone.maxLength} characters; you entered ${phone.value.length}.`;
+    } else if (phone.validity.patternMismatch) {
+        phoneError.textContent = `Phone number should be a valid format`;
     }
+    phoneError.className = "error active"
 }
 
 function showErrors() {

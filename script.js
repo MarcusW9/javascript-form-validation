@@ -62,3 +62,25 @@ function showPhoneError() {
         phoneError.textContent = `Phone number should be at least ${phone.maxLength} characters; you entered ${phone.value.length}.`;
     }
 }
+
+function showErrors() {
+    if (!email.validity.valid) {
+        showEmailError()
+    }
+    if (!uname.validity.valid) {
+        showUnameError()
+    }
+    if (!phone.validity.valid) {
+        showPhoneError()
+    }
+}
+
+form.addEventListener("submit", (e) => {
+    if (!email.validity.valid ||
+    !uname.validity.valid ||
+    !phone.validity.valid
+    ) {
+        showErrors()
+        e.preventDefault();
+    }
+})

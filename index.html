@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Form validation: Task 1</title>
+    <link rel="stylesheet" href="./style.css"> 
+  </head>
+
+  <body>
+    <form novalidate>
+      <h2>Enter your support query</h2>
+      <ul>
+        <li>
+          <label for="uname">User name:</label>
+          <input name="uname" id="uname" required type="text" minlength="5" maxlength="20">
+          <span class="error" aria-live="polite"></span>
+        </li>
+        <li>
+          <label for="email">Email address:</label>
+          <input name="email" id="email" required type="email" minlength="8">
+          <span class="error" aria-live="polite"></span>
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input name="phone" id="phone" required type="number" maxlength="15">
+          <span class="error" aria-live="polite"></span>
+        </li>
+        <li>
+          <label for="comment">Comment:</label>
+          <textarea name="comment" id="comment" required maxlength="200">
+          </textarea>
+        </li>
+        <li>
+          <button>Submit comment</button>
+        </li>
+      </ul>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
